@@ -416,25 +416,15 @@ a:hover {
 }
 
 .experience-timeline {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-xl);
   position: relative;
 }
 
-/* Timeline connector line */
+/* Timeline connector line - hidden for side-by-side layout */
 .experience-timeline::before {
-  content: '';
-  position: absolute;
-  left: 30px;
-  top: 60px;
-  bottom: 60px;
-  width: 2px;
-  background: linear-gradient(180deg,
-      var(--color-accent-primary) 0%,
-      var(--color-accent-secondary) 50%,
-      var(--color-accent-tertiary) 100%);
-  opacity: 0.3;
+  display: none;
 }
 
 .experience-card {
@@ -477,7 +467,7 @@ a:hover {
 }
 
 .experience-card:hover {
-  transform: translateX(8px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
   border-color: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
