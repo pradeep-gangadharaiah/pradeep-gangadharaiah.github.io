@@ -170,7 +170,7 @@ a:hover {
    LAYOUT
    ============================================ */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: var(--space-xl);
 }
@@ -411,13 +411,13 @@ a:hover {
    EXPERIENCE SECTION
    ============================================ */
 .experience-section {
-  max-width: 800px;
+  max-width: 1400px;
   margin: 0 auto var(--space-4xl);
 }
 
 .experience-timeline {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-xl);
   position: relative;
 }
@@ -567,10 +567,10 @@ a:hover {
 }
 
 /* ============================================
-   INTERESTS SECTION
+   SKILLS SECTION
    ============================================ */
-.interests-section {
-  max-width: 900px;
+.skills-section {
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -580,13 +580,13 @@ a:hover {
   font-size: var(--font-size-2xl);
 }
 
-.interests-grid {
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-lg);
 }
 
-.interest-card {
+.skill-category-card {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -595,10 +595,9 @@ a:hover {
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
-  cursor: pointer;
 }
 
-.interest-card::before {
+.skill-category-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -611,59 +610,88 @@ a:hover {
   transition: transform var(--transition-base);
 }
 
-.interest-card:hover {
+.skill-category-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
   border-color: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
 }
 
-.interest-card:hover::before {
+.skill-category-card:hover::before {
   transform: scaleX(1);
 }
 
-.interest-card:nth-child(1)::before {
+/* Gradient variations for different cards */
+.skill-category-card:nth-child(3n+1)::before {
   background: var(--color-gradient-1);
 }
 
-.interest-card:nth-child(2)::before {
+.skill-category-card:nth-child(3n+2)::before {
   background: var(--color-gradient-2);
 }
 
-.interest-card:nth-child(3)::before {
+.skill-category-card:nth-child(3n+3)::before {
   background: var(--color-gradient-3);
 }
 
-.interest-card:nth-child(4)::before {
-  background: var(--color-gradient-1);
-}
-
-.interest-card:nth-child(5)::before {
-  background: var(--color-gradient-2);
-}
-
-.interest-card:nth-child(6)::before {
-  background: var(--color-gradient-3);
-}
-
-.interest-icon {
-  font-size: var(--font-size-3xl);
-  margin-bottom: var(--space-md);
-  display: block;
-}
-
-.interest-title {
+.skill-category-title {
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+  background: var(--color-gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.interest-description {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  margin-bottom: 0;
+.skill-category-card:nth-child(3n+1) .skill-category-title {
+  background: var(--color-gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
+.skill-category-card:nth-child(3n+2) .skill-category-title {
+  background: var(--color-gradient-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skill-category-card:nth-child(3n+3) .skill-category-title {
+  background: var(--color-gradient-3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.skill-badge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.skill-badge:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-primary);
+  transform: translateY(-1px);
+}
+
 
 /* ============================================
    ANIMATIONS
@@ -734,7 +762,7 @@ a:hover {
     font-size: var(--font-size-sm);
   }
 
-  .interests-grid {
+  .skills-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
   }
@@ -752,6 +780,10 @@ a:hover {
   .education-meta {
     flex-direction: column;
     gap: var(--space-sm);
+  }
+
+  .experience-timeline {
+    grid-template-columns: 1fr;
   }
 
   .experience-timeline::before {
