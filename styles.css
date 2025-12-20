@@ -295,6 +295,103 @@ a:hover {
 }
 
 /* ============================================
+   EDUCATION SECTION
+   ============================================ */
+.education-section {
+  max-width: 700px;
+  margin: 0 auto var(--space-4xl);
+}
+
+.education-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-gradient-1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.education-card:hover::before {
+  transform: scaleX(1);
+}
+
+.education-icon {
+  font-size: var(--font-size-3xl);
+  flex-shrink: 0;
+  animation: float 6s ease-in-out infinite;
+}
+
+.education-content {
+  flex: 1;
+}
+
+.education-university {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+  background: var(--color-gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.education-degree {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-xs);
+}
+
+.education-specialization {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+}
+
+.education-meta {
+  display: flex;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.education-location,
+.education-duration {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ============================================
    INTERESTS SECTION
    ============================================ */
 .interests-section {
@@ -465,6 +562,21 @@ a:hover {
   .interests-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  .education-card {
+    flex-direction: column;
+    padding: var(--space-xl);
+    gap: var(--space-md);
+  }
+
+  .education-icon {
+    text-align: center;
+  }
+
+  .education-meta {
+    flex-direction: column;
+    gap: var(--space-sm);
   }
 }
 
