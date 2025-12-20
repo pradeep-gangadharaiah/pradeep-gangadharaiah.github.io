@@ -794,6 +794,7 @@ a:hover {
     flex-direction: column;
     padding: var(--space-xl);
     gap: var(--space-md);
+    align-items: center;
   }
 
   .experience-card:hover {
