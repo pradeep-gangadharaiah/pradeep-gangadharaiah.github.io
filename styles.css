@@ -344,6 +344,22 @@ a:hover {
   font-size: var(--font-size-3xl);
   flex-shrink: 0;
   animation: float 6s ease-in-out infinite;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-md);
+}
+
+.education-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
 }
 
 .education-content {
@@ -485,6 +501,14 @@ a:hover {
   transition: all var(--transition-base);
   position: relative;
   z-index: 1;
+  padding: var(--space-sm);
+}
+
+.experience-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
 }
 
 .experience-card:hover .experience-icon {
